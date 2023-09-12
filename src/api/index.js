@@ -1,7 +1,10 @@
+const { Database } = require('@brtmvdl/database')
 const { Client, Events, GatewayIntentBits } = require('discord.js')
-const { TOKEN } = require('./config.js')
 
+const { TOKEN } = require('./config.js')
 const { MessageLog } = require('./models')
+
+const db = new Database(process.env.DATA_PATH)
 
 const client = new Client({
   intents: [
@@ -17,6 +20,7 @@ client.on(Events.Raw, (ev) => console.log('Raw', ev))
 
 client.on(Events.MessageCreate, (message) => {
   const message_log = new MessageLog(message)
+  db.in('messages').new().writeMany(message_log.toJSON())
 
   message.channel.messages.fetch({ limit: 10 }).then((messages_fetch) => {
     console.log({
