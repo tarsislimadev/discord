@@ -4,6 +4,12 @@
 
 [How to Make a Discord Bot with discord.js](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6avBYxeBSwF48YhAnSn_sA4)
 
+## how to use
+
+```sh
+bash env/up.sh
+```
+
 ## License
 
 [MIT](./LICENSE)
