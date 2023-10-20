@@ -1,0 +1,8 @@
+{
+  "texts": [
+    {
+      "when": [{ "message.0.content": "Olá, gente!" }],
+      "then": "Olá, meu nome é ${bot.name}"
+    }
+  ]
+}
