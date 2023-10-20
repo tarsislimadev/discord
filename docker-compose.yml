@@ -7,5 +7,3 @@ services:
     volumes:
       - './src/api:/app'
       - './data:/data'
-    ports:
-      - '8080:80'
