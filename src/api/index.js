@@ -23,6 +23,7 @@ client.on(Events.Raw, (ev) => console.log('Raw', ev))
 client.on(Events.MessageCreate, (message) => {
   const message_log = new MessageLog(message)
   db.in('messages').new().writeMany(message_log.toJSON())
+
   const text = texts.find((text) => {
     return text.when.every((w) => {
       switch (true) {
@@ -34,12 +35,7 @@ client.on(Events.MessageCreate, (message) => {
   })
 
   if (text) message.reply(text.then)
-  else console.log({
-    ...message_log.toJSON(),
-    messages: messages_fetch
-      .map((mes) => new MessageLog(mes))
-      .map((log) => log.toJSON())
-  })
+  else console.log({ message })
 })
 
 client.login(TOKEN)
