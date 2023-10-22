@@ -1,5 +1,6 @@
 {
   "name": "discord-bot",
+  "nickname": "",
   "version": "0.1.0",
   "dependencies": {
     "@brtmvdl/database": "^0.6.0",
