@@ -6,6 +6,8 @@
 
 [How to Make a Discord Bot with discord.js](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6avBYxeBSwF48YhAnSn_sA4)
 
+[Discord.js Dev](https://old.discordjs.dev/#/docs/discord.js/main/general/welcome)
+
 ## how to install
 
 ```sh
@@ -18,6 +20,6 @@ bash env/install.sh api
 bash env/up.sh
 ```
 
-## License
+## license
 
 [MIT](./LICENSE)
