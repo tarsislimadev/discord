@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM tmvdl/node:espeak-alpine
 
 ENV DISCORD_TOKEN=
 
