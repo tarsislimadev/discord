@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "dependencies": {
     "@brtmvdl/database": "^0.6.0",
-    "discord.js": "^14.11.0"
+    "discord.js": "^14.11.0",
+    "@discordjs/voice": "^0.16.0",
+    "espeak": "^0.0.3"
   }
 }
