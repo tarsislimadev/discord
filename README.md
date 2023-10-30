@@ -8,6 +8,10 @@
 
 [Discord.js Dev](https://old.discordjs.dev/#/docs/discord.js/main/general/welcome)
 
+[espeak on NPM](https://www.npmjs.com/package/espeak)
+
+"Write in text channel, listen in a voice channel"
+
 ## how to install
 
 ```sh
