@@ -1,23 +1,23 @@
-const fs = require('fs')
-const { Database } = require('@brtmvdl/database')
 const { Client, Events } = require('discord.js')
-const messages = require('./messages.js')
 const { TOKEN } = require('./config.js')
-const { MessageLog } = require('./models')
-
-const db = new Database(process.env.DATA_PATH)
 const client = new Client({ intents: require('./intents.js') })
 
-// client.on(Events.InteractionCreate, (interaction) => {
-//   if (!interaction.isChatInputCommand()) return;
-//   const now = Date.now()
-//   console.log({ now })
-// })
+const hellos = ['Hello!', 'Hi.', 'Hey! 🤠']
 
-client.on(Events.MessageCreate, (message) => {
-  const message_log = new MessageLog(message)
-  db.in('messages').new().writeMany(message_log.toJSON())
-  messages.run(message)
-})
+const random = (n) => Math.floor(Math.random() * n)
+
+const answerHello = () => Promise.resolve(hellos[random(hellos.length)])
+
+const answer = (question) => {
+  switch (question) {
+    case '/hello': return answerHello()
+  }
+
+  console.log('No answer.', question)
+
+  return Promise.resolve('')
+}
+
+client.on(Events.MessageCreate, (message) => answer(message.content).then((an) => an && message.reply(an)))
 
 client.login(TOKEN)
